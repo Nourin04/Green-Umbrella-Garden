@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Umbrella Garden</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8eb;
+            color: #2e7d32;
+        }
+
+        header {
+            background-color: #1b5e20;
+            color: white;
+            padding: 20px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        #flowering-plants, #indoor-plants {
+    display: flex;
+    flex-wrap: nowrap;  /* Prevents wrapping */
+    overflow-x: auto;  /* Enables horizontal scrolling */
+    white-space: nowrap;
+    gap: 20px; /* Space between plants */
+    padding-bottom: 10px; /* Prevents scrollbar overlap */
+    scrollbar-width: thin; /* Adjust scrollbar visibility */
+}
+
+        header img {
+            height: 60px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            gap: 10px;
+        }
+
+        nav ul li {
+            padding: 10px 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+            display: block;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+            background: url('hero-bg.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1b5e20;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size:25px;
+            border-radius: 5px;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .explore-btn:hover {
+            background-color: #388e3c;
+
+        }
+
+        .categories {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .category {
+            background-color: #c8e6c9;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+
+        .plant {
+    width: 300px;  /* Adjust as needed */
+    flex: 0 0 auto; /* Prevents flex items from resizing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+        .plant img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+        }
+
+        .plant-info {
+            max-width: 60%;
+        }
+
+        .contact, .address {
+            padding: 50px;
+            text-align: center;
+            background-color: #81c784;
+            border-radius: 15px;
+            margin: 20px;
+        }
+
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .categories {
+    position: relative; /* Ensure the category section is positioned relative */
+}
+
+.scroll-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px; /* Adjust size as needed */
+    color: #1b5e20; /* Color of the icons */
+    cursor: pointer;
+    z-index: 10; /* Ensure icons are above other elements */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: background for better visibility */
+    border-radius: 50%; /* Optional: round shape */
+    padding: 10px; /* Optional: padding for clickable area */
+}
+
+.scroll-icon.left {
+    left: 10px; /* Position from the left */
+}
+
+.scroll-icon.right {
+    right: 10px; /* Position from the right */
+}
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Green Umbrella Garden Logo">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#flowering">Flowering Plants</a></li>
+                <li><a href="#indoor">Indoor Plants</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Green Umbrella Garden</h1>
+        <a href="#categories" class="explore-btn">Explore</a>
+    </section>
+
+    <section class="categories" id="flowering">
+        <h2>Flowering Plants</h2>
+        <div class="scroll-icon left" onclick="scrollLeft('flowering-plants')">&#9664;</div>
+    <div class="scroll-icon right" onclick="scrollRight('flowering-plants')">&#9654;</div>
+        <div id="flowering-plants">
+            <div class="plant"><img src="rose.jpg" alt="Rose"><div class="plant-info"><h3>Rose</h3><p>Beautiful and fragrant.</p><p>Price: $5 - $20</p></div></div>
+            <div class="plant"><img src="melestoma.jpg" alt="Melestoma"><div class="plant-info"><h3>Melestoma</h3><p>Unique purple flowers.</p><p>Price: $7 - $18</p></div></div>
+            <div class="plant"><img src="bougainvillea.jpg" alt="Bougainvillea"><div class="plant-info"><h3>Bougainvillea</h3><p>Colorful and vibrant.</p><p>Price: $8 - $25</p></div></div>
+            <div class="plant">
+                <img src="petunia.jpg" alt="Petunia">
+                <div class="plant-info">
+                    <h3>Petunia</h3>
+                    <p>Bright and cheerful blossoms.</p>
+                    <p>Price: $6 - $15</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="peace-lily.jpg" alt="Peace Lily">
+                <div class="plant-info">
+                    <h3>Peace Lily</h3>
+                    <p>Elegant and air-purifying.</p>
+                    <p>Price: $10 - $25</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="adenium.jpg" alt="Adenium">
+                <div class="plant-info">
+                    <h3>Adenium</h3>
+                    <p>Desert rose with stunning blooms.</p>
+                    <p>Price: $12 - $30</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="hibiscus.jpg" alt="Hibiscus">
+                <div class="plant-info">
+                    <h3>Hibiscus</h3>
+                    <p>Tropical beauty with large flowers.</p>
+                    <p>Price: $5 - $18</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="anthurium.jpg" alt="Anthurium">
+                <div class="plant-info">
+                    <h3>Anthurium</h3>
+                    <p>Exotic red heart-shaped flowers.</p>
+                    <p>Price: $15 - $35</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="russelia.jpg" alt="Russelia">
+                <div class="plant-info">
+                    <h3>Russelia</h3>
+                    <p>Delicate red cascading blooms.</p>
+                    <p>Price: $7 - $20</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="allamanda.jpg" alt="Allamanda">
+                <div class="plant-info">
+                    <h3>Allamanda</h3>
+                    <p>Golden trumpet with bright yellow flowers.</p>
+                    <p>Price: $8 - $22</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="categories" id="indoor">
+        <h2>Indoor Plants</h2>
+        <div class="scroll-icon left" onclick="scrollLeft('indoor-plants')">&#9664;</div>
+    <div class="scroll-icon right" onclick="scrollRight('indoor-plants')">&#9654;</div>
+        <div id="indoor-plants">
+            <div class="plant"><img src="zz-plant.jpg" alt="ZZ Plant"><div class="plant-info"><h3>ZZ Plant</h3><p>Low maintenance.</p><p>Price: $10 - $30</p></div></div>
+            <div class="plant"><img src="snake-plant.jpg" alt="Snake Plant"><div class="plant-info"><h3>Snake Plant</h3><p>Air purifier.</p><p>Price: $12 - $35</p></div></div>
+            <div class="plant">
+                <img src="areca-palm.jpg" alt="Areca Palm">
+                <div class="plant-info">
+                    <h3>Areca Palm</h3>
+                    <p>Elegant and air-purifying.</p>
+                    <p>Price: $15 - $40</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="christmas-cactus.jpg" alt="Christmas Cactus">
+                <div class="plant-info">
+                    <h3>Christmas Cactus</h3>
+                    <p>Beautiful seasonal bloomer.</p>
+                    <p>Price: $8 - $25</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="orchids.jpg" alt="Orchids">
+                <div class="plant-info">
+                    <h3>Orchids</h3>
+                    <p>Exotic and elegant flowers.</p>
+                    <p>Price: $20 - $50</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="tulsi.jpg" alt="Tulsi">
+                <div class="plant-info">
+                    <h3>Tulsi</h3>
+                    <p>Holy basil with medicinal benefits.</p>
+                    <p>Price: $5 - $15</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="aloe-vera.jpg" alt="Aloe Vera">
+                <div class="plant-info">
+                    <h3>Aloe Vera</h3>
+                    <p>Healing and easy to care for.</p>
+                    <p>Price: $6 - $20</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="money-plant.jpg" alt="Money Plant">
+                <div class="plant-info">
+                    <h3>Money Plant</h3>
+                    <p>Symbol of prosperity.</p>
+                    <p>Price: $7 - $25</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="gerbera.jpg" alt="Gerbera Plant">
+                <div class="plant-info">
+                    <h3>Gerbera Plant</h3>
+                    <p>Vibrant and cheerful flowers.</p>
+                    <p>Price: $10 - $30</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="spider-plant.jpg" alt="Spider Plant">
+                <div class="plant-info">
+                    <h3>Spider Plant</h3>
+                    <p>Great air purifier.</p>
+                    <p>Price: $8 - $22</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="philodendron.jpg" alt="Philodendron">
+                <div class="plant-info">
+                    <h3>Philodendron</h3>
+                    <p>Low-maintenance indoor plant.</p>
+                    <p>Price: $12 - $28</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="kalangia.jpg" alt="Kalangia">
+                <div class="plant-info">
+                    <h3>Kalangia</h3>
+                    <p>Rare and exotic foliage.</p>
+                    <p>Price: $18 - $40</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="anthurium.jpg" alt="Anthurium">
+                <div class="plant-info">
+                    <h3>Anthurium</h3>
+                    <p>Striking red heart-shaped flowers.</p>
+                    <p>Price: $15 - $35</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="peace-lily.jpg" alt="Peace Lily">
+                <div class="plant-info">
+                    <h3>Peace Lily</h3>
+                    <p>Elegant and purifies air.</p>
+                    <p>Price: $10 - $25</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="lucky-bamboo.jpg" alt="Lucky Bamboo">
+                <div class="plant-info">
+                    <h3>Lucky Bamboo</h3>
+                    <p>Symbol of good fortune.</p>
+                    <p>Price: $10 - $30</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="king-palm.jpg" alt="King Palm">
+                <div class="plant-info">
+                    <h3>King Palm</h3>
+                    <p>Majestic and tropical.</p>
+                    <p>Price: $20 - $50</p>
+                </div>
+            </div>
+            
+            <div class="plant">
+                <img src="raphis-palm.jpg" alt="Raphis Palm">
+                <div class="plant-info">
+                    <h3>Raphis Palm</h3>
+                    <p>Graceful and luxurious.</p>
+                    <p>Price: $25 - $60</p>
+                </div>
+            </div>
+            
+        </div>
+
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@greenumbrella.com</p>
+        <p>Phone: +123 456 7890</p>
+    </section>
+
+    <section class="address">
+        <h2>Our Address</h2>
+        <p>123 Green Street, Plant City, Earth</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Green Umbrella Garden. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function scrollLeft(containerId) {
+            const container = document.getElementById(containerId);
+            container.scrollBy({
+                top: 0,
+                left: -300, // Adjust this value to change the scroll amount
+                behavior: 'smooth'
+            });
+        }
+    
+        function scrollRight(containerId) {
+            const container = document.getElementById(containerId);
+            container.scrollBy({
+                top: 0,
+                left: 300, // Adjust this value to change the scroll amount
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
